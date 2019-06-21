@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>navber</title>
+    <style>
+        *{
+            margin: 0;     /*-- 去除默认样式-- */
+            padding: 0;
+        }
+        .navigation{
+            height: 50px;
+            width: 50%;
+            margin: 10px auto 0px;   /*-- 设置居中 --*/
+            border-radius: 5px;     /*-- 给边框制作一个五像素的圆角 --*/
+            box-shadow: 0px 2px 3px 3px rgba(0, 0, 0, 0.3);    /*-- 制作一个透明度为0.3的黑色阴影 --*/
+        }
+        ul{
+            list-style: none;   /*-- 去除列表的圆点样式 --*/
+        }
+        .navigation>ul>li{
+            float: left;     /*-- 利用浮动使得列表排列成一行 --*/
+            position: relative;        /*-- 制作绝对定位的参考点 --*/
+        }
+        a{
+            display: block;
+            padding: 15px;
+            color: black;
+            text-decoration: none;       /*-- 去除a标签的下划线，改变其颜色 --*/
+            min-width: 50px;            /*-- 设置最小宽度 --*/
+        }
+        .lch{
+            box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.3);    /*-- 制作一个透明度为0.3的黑色阴影 --*/
+            position: absolute;      /*-- 设置为绝对定位且相对于其父元素的最下边 --*/
+            top: 100%;
+            display: none;        /*-- 设为常不可见--*/
+        }
+        .navigation>ul>li:hover .lch{      /* 鼠标移动到导航栏某处出现下拉菜单的效果*/
+            display: block;
+        }
+        .navigation a:hover{
+            color: white;       /*设置被选中时的效果*/
+            background: rgba(0, 0, 0, 0.4);
+        }
+        .floatfix::after{
+            content: '';    /*利用伪元素清除浮动*/
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation floatfix">
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">作品</a></li>   
+            <li>
+                <a href="#">更多</a>
+                <ul class="lch">
+                    <li><a href="#">前端</a></li>
+                    <li><a href="#">后端</a></li>
+                    <li><a href="#">移动端</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>
