@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>按钮居中</title>
+    <style>
+        .lch{
+            background: rgb(204, 204, 204);
+            height: 200px;
+            width: 80%;
+            margin: 0 auto; 
+            text-align: center;
+        }
+        .lch::before{
+            content: ' ';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+        ul{
+            list-style: none;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        li{
+            display: inline;
+            border-radius: 5px;
+            color: white;
+            background: red;
+            font-size: 18px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="lch">
+        <ul class="li">
+            <li>按钮1</li>
+            <li>按钮2</li>
+            <li>按钮3</li>
+        </ul>
+    </div>
+</body>
+</html>
